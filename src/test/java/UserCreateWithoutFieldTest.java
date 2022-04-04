@@ -9,6 +9,10 @@ import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
     public class UserCreateWithoutFieldTest {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5e9511b6af64b44b3e723964e0703d40649d37f2
     private final User user;
 
         public UserCreateWithoutFieldTest(User user) {
@@ -32,6 +36,7 @@ import static org.junit.Assert.*;
         )
 
         public void userWithoutFieldIsNotAllowed() {
+<<<<<<< HEAD
 
             final String expectedMessage = "Email, password and name are required fields";
             UserClient userClient = new UserClient();
@@ -49,5 +54,17 @@ import static org.junit.Assert.*;
             assertFalse ("Пользователь не должен зарегистрироваться", isUserReg);
             assertEquals("В сообщении об ошибке другой текст",
                     expectedMessage, actualMessage);
+=======
+            final String expectedMessage = "Email, password and name are required fields";
+            ValidatableResponse response = new UserClient().createUser(user);
+            String actualMessage = response.extract().path("message");
+            boolean isUserReg = response.extract().path("success");
+
+            assertEquals("Статус-код должен быть 403", SC_FORBIDDEN, response.extract().statusCode());
+            assertFalse ("Пользователь не должен зарегистрироваться", isUserReg);
+            assertEquals("В сообщении об ошибке другой текст",
+                    expectedMessage, actualMessage);
+
+>>>>>>> 5e9511b6af64b44b3e723964e0703d40649d37f2
         }
 }

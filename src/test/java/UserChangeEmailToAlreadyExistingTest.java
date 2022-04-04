@@ -9,8 +9,13 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 public class UserChangeEmailToAlreadyExistingTest {
+<<<<<<< HEAD
     private User user;
     private User secondUser;
+=======
+    private static User user;
+    private static User secondUser;
+>>>>>>> 5e9511b6af64b44b3e723964e0703d40649d37f2
 
     private UserClient userClient;
 

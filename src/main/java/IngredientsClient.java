@@ -8,10 +8,17 @@ public class IngredientsClient extends RestAssuredClient {
     @Step("Получить данные о всех ингредиентах")
     public ValidatableResponse getIngredients() {
          return given()
+<<<<<<< HEAD
                 .spec(getBaseSpec())
                 .when()
                 .get(INGREDIENTS_PATH)
                 .then();
+=======
+                .spec(getBaseSpec()).log().all()
+                .when()
+                .get(INGREDIENTS_PATH)
+                .then().log().all();
+>>>>>>> 5e9511b6af64b44b3e723964e0703d40649d37f2
     }
 }
 

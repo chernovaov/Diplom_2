@@ -11,7 +11,11 @@ import static org.apache.http.HttpStatus.SC_OK;
 import static org.junit.Assert.*;
 
 public class UserAuthChangeInfoTest {
+<<<<<<< HEAD
     private User user;
+=======
+    private static User user;
+>>>>>>> 5e9511b6af64b44b3e723964e0703d40649d37f2
     private UserClient userClient;
     String accessToken;
 
@@ -19,9 +23,12 @@ public class UserAuthChangeInfoTest {
     public void startUp() {
         user = User.getRandomEmailAndPassAndName();
         userClient = new UserClient();
+<<<<<<< HEAD
         userClient.createUser(user);
         ValidatableResponse login = userClient.loginUser(new User(user.email, user.password, user.name));
         accessToken = login.extract().path("accessToken");
+=======
+>>>>>>> 5e9511b6af64b44b3e723964e0703d40649d37f2
     }
     @After
     public void tearDown() {
@@ -32,7 +39,13 @@ public class UserAuthChangeInfoTest {
     @DisplayName("Проверка, что авторизованный пользователь может поменять Почту и успешно залогиниться с ней")
     @Description("Проверка: status code=200")
     public void userChangeEmail (){
+<<<<<<< HEAD
 
+=======
+        userClient.createUser(user);
+        ValidatableResponse login = userClient.loginUser(new User(user.email, user.password, user.name));
+        accessToken = login.extract().path("accessToken");
+>>>>>>> 5e9511b6af64b44b3e723964e0703d40649d37f2
         String newEmail = User.getUserEmailOnly().email.toLowerCase();
 
         ValidatableResponse response = userClient.changeUserInfo(accessToken, new User(newEmail, user.password, user.name));
@@ -53,6 +66,12 @@ public class UserAuthChangeInfoTest {
     @DisplayName("Проверка, что авторизованный пользователь может поменять Пароль и успешно с ним залогиниться")
     @Description("Проверка: status code=200")
     public void userChangePassword (){
+<<<<<<< HEAD
+=======
+        userClient.createUser(user);
+        ValidatableResponse login = userClient.loginUser(new User(user.email, user.password, user.name));
+        accessToken = login.extract().path("accessToken");
+>>>>>>> 5e9511b6af64b44b3e723964e0703d40649d37f2
         String newPassword= User.getUserPasswordOnly().password;
 
         ValidatableResponse response = userClient.changeUserInfo(accessToken, new User(user.email, newPassword, user.name));
@@ -72,6 +91,12 @@ public class UserAuthChangeInfoTest {
     @DisplayName("Проверка, что авторизованный пользователь может поменять Имя")
     @Description("Проверка: status code=200")
     public void userChangeName (){
+<<<<<<< HEAD
+=======
+        userClient.createUser(user);
+        ValidatableResponse login = userClient.loginUser(new User(user.email, user.password, user.name));
+        accessToken = login.extract().path("accessToken");
+>>>>>>> 5e9511b6af64b44b3e723964e0703d40649d37f2
         String oldName = user.name;
         String newName= User.getUserNameOnly().name.toLowerCase();
 

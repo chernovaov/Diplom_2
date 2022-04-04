@@ -12,7 +12,11 @@ import static org.junit.Assert.*;
 
 public class CreateOrderTest {
     private UserClient userClient;
+<<<<<<< HEAD
     private User user;
+=======
+    private static User user;
+>>>>>>> 5e9511b6af64b44b3e723964e0703d40649d37f2
     private OrdersClient ordersClient;
     private IngredientsClient ingredientsClient;
     String accessToken;
